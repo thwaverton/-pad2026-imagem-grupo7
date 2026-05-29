@@ -10,9 +10,9 @@
 | Integrante | Papel | GitHub |
 |------------|-------|--------|
 | João Gabriel | Líder | [@jgds007]( |
-| Thwaverton OLiveira Martins | [@thwaverton] |
-| Vitor Severino França| [@] |
-| Gustavo Henrique Alves dos Santos| [@Henrique-codes] |
+| Thwaverton OLiveira Martins | integrante | [@thwaverton] |
+| Vitor Severino França | integrante| [@] |
+| Gustavo Henrique Alves dos Santos |integrante| Líder| [@Henrique-codes] |
 
 ## 🎯 Sobre o projeto
 
