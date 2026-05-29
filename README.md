@@ -12,7 +12,7 @@
 | João Gabriel | Líder | [@jgds007]( |
 | Thwaverton OLiveira Martins | integrante | [@thwaverton] |
 | Vitor Severino França | integrante| [@] |
-| Gustavo Henrique Alves dos Santos |integrante| Líder| [@Henrique-codes] |
+| Gustavo Henrique Alves dos Santos |integrante| [@Henrique-codes] |
 
 ## 🎯 Sobre o projeto
 
