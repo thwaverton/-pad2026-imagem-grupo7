@@ -1,0 +1,1 @@
+# -pad2026-imagem-grupo7
