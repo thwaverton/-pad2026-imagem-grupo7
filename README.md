@@ -24,10 +24,24 @@ Este é um projeto **ORIGINAL** baseado em um **Projeto FMF de referência**, no
   https://medium.com/swlh/image-classification-tutorials-in-pytorch-transfer-learning-19ebc329e200
 
 ### Pergunta-problema
-> *(a definir na Semana A — ex.: "Dada uma imagem de X, conseguimos classificar automaticamente entre as classes A, B e C?")*
+> Analisando a foto de uma plantação de bananeiras em conjunto com imagens de folhas
+> pré-selecionadas, é possível identificar se as plantas estão saudáveis ou doentes?
+> Em caso positivo, é possível determinar a extensão aproximada da área afetada?
+
+### Classes (taxonomia comum, após harmonização)
+`healthy` · `sigatoka` · `cordana` · `pestalotiopsis` · `fusarium_wilt`
+
+### Métrica de sucesso
+- **F1-macro *pooled*** (todas as fontes misturadas) — visão otimista.
+- **F1-macro *LODO*** (*leave-one-dataset-out*, testar num dataset nunca visto) — visão realista.
+- A diferença entre as duas = o **gap de generalização**.
 
 ### Nossa originalidade (o que nos diferencia do FMF)
-> *(a definir — ex.: dataset com contexto local + explicabilidade com Grad-CAM + mini-app de demonstração)*
+1. **Engenharia de dados:** combinar vários datasets públicos de **países diferentes**
+   (Bangladesh, Tanzânia, Índia) e padronizar os esquemas de rótulo numa taxonomia comum.
+2. **Avaliação realista:** teste **leave-one-dataset-out** (treina em N−1 fontes, testa na restante).
+3. **Explicabilidade:** **Grad-CAM** mostrando se o modelo olhou a lesão ou o fundo/câmera.
+4. **(opcional) Coleta brasileira:** fotos da equipe como um dataset "nunca visto" genuinamente nacional.
 
 ---
 
