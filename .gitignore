@@ -1,0 +1,27 @@
+# === Dados brutos (NÃO versionar imagens no Git) ===
+# As imagens ficam só na máquina/Colab. O repo versiona apenas a
+# ESTRUTURA das pastas (via .gitkeep), o data/README.md e o manifesto.
+data/raw/**
+!data/raw/
+!data/raw/*/
+!data/raw/**/.gitkeep
+# derivado (320px) tambem nao vai pro Git — vive no Drive/Colab; so o manifest sobe
+data/derived/
+*.zip
+*.tar
+*.tar.gz
+
+# === Modelos treinados ===
+models/*.pth
+models/*.pt
+
+# === Python ===
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# === SO / editor ===
+.DS_Store
+*.docx

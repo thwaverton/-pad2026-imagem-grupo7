@@ -1,0 +1,8 @@
+# Fase Get: o build_manifest.py usa só a biblioteca padrão (nada a instalar).
+# As linhas abaixo são para as próximas fases (Explore / Model).
+torch
+torchvision
+scikit-learn
+matplotlib
+pandas
+pillow
