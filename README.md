@@ -31,12 +31,33 @@ Este é um projeto **ORIGINAL** baseado em um **Projeto FMF de referência**, no
 
 ---
 
+## 🚀 Como rodar a fase Get (coleta dos dados)
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/thwaverton/-pad2026-imagem-grupo7/blob/main/notebooks/01_get.ipynb)
+
+Todo o pipeline de dados roda no **Google Colab**, célula por célula (cada uma explicada):
+
+1. **Abra** o notebook [`notebooks/01_get.ipynb`](notebooks/01_get.ipynb) no Colab (botão acima).
+2. **Pré-requisitos:** uma conta Google (para o Drive) e uma conta Kaggle — baixe seu
+   `kaggle.json` em *Kaggle → Settings → Create New Token*.
+3. **Rode as células de cima para baixo.** Elas baixam os datasets (Zenodo + Kaggle),
+   reduzem cada imagem para 320 px, organizam em `data/derived/<fonte>/<classe>/`, montam o
+   `data/manifest.csv` (com a coluna `source`, que viabiliza o teste **LODO**) e salvam tudo
+   no seu Google Drive.
+4. **Resultado:** dataset limpo (~1–2 GB) + `manifest.csv`. Nas próximas sessões é só
+   remontar o Drive — sem rebaixar nada.
+
+> As imagens **não** ficam no Git (são pesadas). Detalhes de fontes, licenças e do pipeline
+> em [`data/README.md`](data/README.md) e [`data/SOURCES.md`](data/SOURCES.md).
+
+---
+
 ## 🗓️ Cronograma (AGEMC)
 
 | Fase | Etapa | Prazo |
 |------|-------|-------|
 | **A** — Ask | Pergunta, classes e métrica de sucesso | até **01/jun** |
-| **G** — Get | Coleta e organização dos dados | até **07/jun** |
+| **G** — Get | Coleta e organização dos dados | até **07/jun** ✅ |
 | **E** — Explore | Análise exploratória (EDA) | até **14/jun** |
 | **M** — Model | Treino e validação do modelo | até **21/jun** |
 | **C** — Communicate | Resultados, demo e slides | até **28/jun** |
@@ -46,18 +67,24 @@ O repositório é atualizado **semana a semana** (commits acompanham o processo,
 
 ---
 
-## 📁 Estrutura do repositório *(em construção)*
+## 📁 Estrutura do repositório
 
 ```
 .
 ├── README.md
 ├── requirements.txt
-├── data/            # como obter os dados (dataset não versionado aqui)
-├── notebooks/       # 01_get · 02_explore · 03_model · 04_originalidade
-├── src/             # dataset.py · model.py · train.py
-├── models/          # modelo treinado (.pth)
-├── reports/         # gráficos, matriz de confusão, slides
-└── app/             # (opcional) demo Gradio/Streamlit
+├── data/
+│   ├── README.md          # como obter/reconstruir os dados
+│   ├── SOURCES.md         # fontes, licenças e links
+│   └── raw/ , derived/    # imagens (NÃO versionadas — ficam no Drive/Colab)
+├── notebooks/
+│   └── 01_get.ipynb       # ✅ fase Get (download, resize, manifesto) — roda no Colab
+├── src/
+│   ├── labels.py          # taxonomia e harmonização de rótulos por fonte
+│   ├── build_derived.py   # stream dos zips + resize 320px (JPEG q90)
+│   └── build_manifest.py  # manifesto multi-fonte + dedup SHA-256
+├── models/                # modelo treinado (.pth) — fases futuras
+└── reports/               # gráficos, matriz de confusão, slides
 ```
 
 ---
