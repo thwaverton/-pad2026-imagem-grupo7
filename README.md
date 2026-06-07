@@ -115,3 +115,7 @@ Mendeley (DOI 10.17632/4wyymrcpyz.1): https://data.mendeley.com/datasets/4wyymrc
 Artigo: https://www.sciencedirect.com/science/article/pii/S2352340922006242
 
 br — Coleta da equipe (🇧🇷 Brasil): sem fonte externa —.
+
+🎲 **Semana 2** — Datasets escolhidos, filtrar quais dados são relevantes e pequena exploração dos dados —
+
+  Ao longo da semana a equipe se dedicou a encontrar datasets que possuam dados que iremos processar para a nossa pergunta (fotos de bananal, folhas saudaveis e doentes) agora o grupo ira se reunir hoje para nossa comunicar os datasets encontrados e visualisalos e filtralos para descobrir quais dados são mais relevantes e condizentes com o nosso objetivo.
