@@ -24,9 +24,9 @@ Este é um projeto **ORIGINAL** baseado em um **Projeto FMF de referência**, no
   https://medium.com/swlh/image-classification-tutorials-in-pytorch-transfer-learning-19ebc329e200
 
 ### Pergunta-problema
-> Analisando a foto de uma plantação de bananeiras em conjunto com imagens de folhas
-> pré-selecionadas, é possível identificar se as plantas estão saudáveis ou doentes?
-> Em caso positivo, é possível determinar a extensão aproximada da área afetada?
+> Dada a foto de uma folha de bananeira, conseguimos identificar automaticamente se ela
+> está saudável ou qual doença ela tem? E, juntando datasets de países e câmeras diferentes,
+> o modelo generaliza para imagens de uma fonte que nunca viu no treino?
 
 ### Classes (taxonomia comum, após harmonização)
 `healthy` · `sigatoka` · `cordana` · `pestalotiopsis` · `fusarium_wilt`
@@ -115,9 +115,9 @@ O repositório é atualizado **semana a semana** (commits acompanham o processo,
 
 🚧 **Semana 1 (Ask)** — grupo formado, projeto escolhido e repositório criado. Desenvolvimento em andamento.
 
-❓ Após uma breve reunião o Grupo decidiu a seguite pergunta: **Analisando a foto de uma plantação de bananeiras em conjunto com imagens de folhas pré-selecionadas, é possível identificar se as plantas estão saudáveis ou doentes? Em caso positivo, é possível determinar a extensão aproximada da área afetada?**
+❓ Após uma breve reunião o Grupo decidiu a seguinte pergunta: **A partir da foto de uma folha de bananeira, é possível identificar automaticamente se a planta está saudável ou qual doença ela possui?**
 
-O processo para a criação da pergunta surgiu após um dos nossos menbros comentar sobre a familia possuir uma plantação de Bananas e como era o dia a dia deles, após isso ele nos mostrou os problemas que a plantação sofre, pragas e bananeiras doentes. Nos inicialmente decidimos abordar a pergunta para apenas classificar se uma bananeira estaria doente ou não, mas depois de dialogar por mais um tempo decidimos ir além de so classificar as bananeiras, mas sim dizer qual o tamanho da aréa da plantação afetada e qual pode ser o possivel aumento da area afetada durante o tratamento da area atual.
+O processo para a criação da pergunta surgiu após um dos nossos membros comentar sobre a família possuir uma plantação de bananas e como era o dia a dia deles; ele nos mostrou os problemas que a plantação sofre, pragas e bananeiras doentes. A partir disso, decidimos construir um classificador que, a partir da foto de uma folha, identifique se a planta está saudável ou qual doença ela possui — e que generalize para fotos de fontes diferentes das vistas no treino.
 
 🗂️ Possiveis datasets que utilizaremos:
 | Apelido | Dataset | País | Classes | Tamanho | Onde pegar |
