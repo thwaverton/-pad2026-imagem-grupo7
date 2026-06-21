@@ -24,9 +24,7 @@ Este é um projeto **ORIGINAL** baseado em um **Projeto FMF de referência**, no
   https://medium.com/swlh/image-classification-tutorials-in-pytorch-transfer-learning-19ebc329e200
 
 ### Pergunta-problema
-> Dada a foto de uma folha de bananeira, conseguimos identificar automaticamente se ela
-> está saudável ou qual doença ela tem? E, juntando datasets de países e câmeras diferentes,
-> o modelo generaliza para imagens de uma fonte que nunca viu no treino?
+> A partir da foto de uma folha de bananeira, conseguimos **prever a doença** e **generalizar para fontes nunca vistas** no treino?
 
 ### Classes (taxonomia comum, após harmonização)
 `healthy` · `sigatoka` · `cordana` · `pestalotiopsis` · `fusarium_wilt`
@@ -115,7 +113,7 @@ O repositório é atualizado **semana a semana** (commits acompanham o processo,
 
 🚧 **Semana 1 (Ask)** — grupo formado, projeto escolhido e repositório criado. Desenvolvimento em andamento.
 
-❓ Após uma breve reunião o Grupo decidiu a seguinte pergunta: **A partir da foto de uma folha de bananeira, é possível identificar automaticamente se a planta está saudável ou qual doença ela possui?**
+❓ Após uma breve reunião o Grupo decidiu a seguinte pergunta: **A partir da foto de uma folha de bananeira, conseguimos prever a doença e generalizar para fontes nunca vistas no treino?**
 
 O processo para a criação da pergunta surgiu após um dos nossos membros comentar sobre a família possuir uma plantação de bananas e como era o dia a dia deles; ele nos mostrou os problemas que a plantação sofre, pragas e bananeiras doentes. A partir disso, decidimos construir um classificador que, a partir da foto de uma folha, identifique se a planta está saudável ou qual doença ela possui — e que generalize para fotos de fontes diferentes das vistas no treino.
 
