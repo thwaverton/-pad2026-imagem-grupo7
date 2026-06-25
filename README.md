@@ -11,7 +11,7 @@
 |------------|-------|--------|
 | João Gabriel | Líder | [@jgds007]( |
 | Thwaverton OLiveira Martins | integrante | [@thwaverton] |
-| Vitor Severino França | integrante| [@] |
+| Vitor Severino França | integrante| [@lino47309-tech] |
 | Gustavo Henrique Alves dos Santos |integrante| [@Henrique-codes] |
 
 ---
