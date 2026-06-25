@@ -158,3 +158,62 @@ br — Coleta da equipe (🇧🇷 Brasil): sem fonte externa —.
 🎲 **Semana 2** — Datasets escolhidos, filtrar quais dados são relevantes e pequena exploração dos dados —
 
   Ao longo da semana a equipe se dedicou a encontrar datasets que possuam dados que iremos processar para a nossa pergunta (fotos de bananal, folhas saudaveis e doentes) agora o grupo ira se reunir hoje para nossa comunicar os datasets encontrados e visualisalos e filtralos para descobrir quais dados são mais relevantes e condizentes com o nosso objetivo.
+
+🗺️ **Semana 3** — Apos a filtragem dos dados, nos passamos o tempo discutindo sobre como iriamos proseguir com a exploração dos nossos dados, definimos que cada integrante iria montar uma proposta de explore, com o tempo nos decidimos realizar a seguinte proposta de um dos nossos integrantes:
+
+**Objetivos principais:**
+Avaliar o desbalanceamento das classes — importante para métricas como F1-macro
+Analisar a matriz fonte × classe — base para testes LODO (Leave-One-Out Domain Out)
+Inspecionar amostras visualmente — por classe e por fonte (câmeras/fundos diferentes)
+Testar a hipótese central: os dados agrupam por doença ou por fonte/câmera?
+
+Decidimos realizar estes objetivos e observar os resultados ao longo da semana.
+
+🏃💨 **Semana 4 + 5** — Apos o ultimo encontro e uma pequena reunião para alinhamento de objetivos, nosso grupo decidiu que iriamos apresentar no dia 25, então o que seria o nosso relatorio da semana 4 acabou virando uma fusão com o que iriamos planejar para a semana 5. Como visto iremos abordar o nosso model: O que decidimos fazer nessa fase do AGEMC (Associassão... ksksk) foi implementação, o treinamento e avaliação do modelo para classificação de imagens de das folhas de bananeira, comparando dois cenários de generalização:
+
+📋 **Fluxo Principal:**
+
+1. Preparação dos dados:
+Carrega dataset do Google Drive com manifesto (CSV com rótulos e metadados)
+Filtra duplicatas e conflitos de anotação
+Identifica classes únicas e fontes de imagem
+
+2. Transformações de imagem
+Treino: augmentation leve (crop aleatório, flip horizontal, variação de cor)
+Validação/Teste: transformações determinísticas (resize, crop central)
+Normalização ImageNet uniforme (regra obrigatória para LODO)
+
+3. Modelo base
+ResNet-18 pré-treinada no ImageNet
+Cabeça customizada para o número de classes presentes
+
+4. Cenário 1: Pooled (Otimista)
+Todas as fontes de imagem misturadas no treino
+Split estratificado: 80% treino / 20% validação
+Calcula F1-macro, matriz de confusão, sensibilidade/especificidade, ROC-AUC
+
+5. Cenário 2: LODO (Leave-One-Dataset-Out — Realista)
+Para cada fonte: treina com outras, testa nela
+Simula generalização cross-source
+F1 calculado apenas nas classes presentes no treino daquele fold
+Revela o "gap de generalização" (quão otimista é o pooled)
+
+6. Interpretabilidade: Grad-CAM
+Visualiza onde o modelo focou atenção
+Detecta se olhou para a lesão (correto) ou fundo/borda (indicador de overfitting à fonte)
+
+7. Salvar modelo
+Exporta pesos treinados para Google Drive
+
+🎯 **Os Metadados:** 
+Modelo: ResNet-18 transfer learning
+Métrica principal	F1-macro
+Comparação	Pooled vs LODO (generalização cross-source)
+Explicabilidade	Grad-CAM (heatmaps de atenção)
+Ambiente	Google Colab com GPU
+
+💡 **Principais Insights obtidos:**
+F1 Pooled: número otimista (dados misturados)
+F1 LODO: número realista (teste em fonte não vista)
+GAP: diferença revela viés da origem dos dados
+Grad-CAM: valida se o modelo aprende features semanticamente corretas
